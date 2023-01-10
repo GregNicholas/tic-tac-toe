@@ -4,17 +4,44 @@
 		font-size: 45px;
 	}
 
+	.inst {
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+		color: dodgerblue;
+		font-size: 17px;
+	}
+
+	.inst-line {
+		display: block;
+	}
+
+	.inst-line-1 {
+		margin-bottom: 1rem;
+	}
+
+	.player-title {
+		font-weight: bold;
+	}
+
 	/* 3*3 Grid */
-	#b1, #b2, #b3, #b4, #b5,
-	#b6, #b7, #b8, #b9 {
+	.box {
 		width: 80px;
 		height: 60px;
-		/* margin: auto; */
         margin: 0 .5rem .5rem 0;
 		border: 1px solid gray;
 		border-radius: 6px;
 		font-size: 30px;
 		text-align: center;
+		cursor: pointer;
+	}
+
+	.box:hover {
+		transform: scale(1.1);
+		border: 1px solid dodgerblue;
+	}
+
+	.game-grid {
+		margin-bottom: 1rem;
 	}
 
 	/* Reset Button */
@@ -48,11 +75,3 @@
 		text-align: center;
 	}
 
-	/* Game Instruction Text */
-	#ins {
-		font-family: Verdana,
-			Geneva, Tahoma, sans-serif;
-			
-		color: dodgerblue;
-		font-size: 17px;
-	}
