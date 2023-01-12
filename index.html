@@ -10,30 +10,28 @@
         <p class="inst">
             <span class="inst-line inst-line-1">Game starts by clicking a box</span>
             <span class="inst-line">First Player is <span class="player-title">Player X</span></span>
-            <span class="inst-line">Second Player as <span class="player-title">Player O</span></span>
+            <span class="inst-line">Second Player is <span class="player-title">Player O</span></span>
         </p>
-        
-        <!-- 3*3 grid of Boxes -->
+ 
         <div class="game-grid">
             <div class="row row1">
-                <input class="box" type="text" id="b1" onclick="tic_3(); boxFunc();" readonly>
-                <input class="box" type="text" id="b2" onclick="tic_4(); boxFunc();" readonly>
-                <input class="box" type="text" id="b3" onclick="tic_5(); boxFunc();" readonly>
+                <input class="box" type="text" id="b1" onclick="tic('b1'); boxFunc();" readonly>
+                <input class="box" type="text" id="b2" onclick="tic('b2'); boxFunc();" readonly>
+                <input class="box" type="text" id="b3" onclick="tic('b3'); boxFunc();" readonly>
             </div>
             <div class="row row2">
-                <input class="box" type="text" id="b4" onclick="tic_6(); boxFunc();" readonly>
-                <input class="box" type="text" id="b5" onclick="tic_7(); boxFunc();" readonly>
-                <input class="box" type="text" id="b6" onclick="tic_8(); boxFunc();" readonly>
+                <input class="box" type="text" id="b4" onclick="tic('b4'); boxFunc();" readonly>
+                <input class="box" type="text" id="b5" onclick="tic('b5'); boxFunc();" readonly>
+                <input class="box" type="text" id="b6" onclick="tic('b6'); boxFunc();" readonly>
             </div>
             <div class="row row3">
-                <input class="box" type="text" id="b7" onclick="tic_9(); boxFunc();" readonly>
-                <input class="box" type="text" id="b8" onclick="tic_10(); boxFunc();" readonly>
-                <input class="box" type="text" id="b9" onclick="tic_11(); boxFunc();" readonly>
+                <input class="box" type="text" id="b7" onclick="tic('b7'); boxFunc();" readonly>
+                <input class="box" type="text" id="b8" onclick="tic('b8'); boxFunc();" readonly>
+                <input class="box" type="text" id="b9" onclick="tic('b9'); boxFunc();" readonly>
             </div>
         </div>
-        <!-- Grid end here  -->
-        <!-- Button to reset game -->
-        <button id="but" onclick="tic_2()">
+
+        <button id="but" onclick="reset()">
             RESET
         </button>
         <!-- Space to show player turn -->
