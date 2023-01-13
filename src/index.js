@@ -53,15 +53,15 @@ function boxFunc() {
 		|| (b3 && b3 === b6 && b6 === b9) || (b1 && b1 === b5 && b5 === b9) || (b3 && b3 === b5 && b5 === b7)
 		|| (b2 && b2 === b5 && b5 === b8) || (b4 && b4 === b5 && b5 === b6)) {
 			declareWinner(curPlayer);
-			if(curPlayer === 'X') {
+			if(curPlayer === 'O') {
 				jsConfetti.addConfetti({
-					emojis: ['🦄'],
+					emojis: ['💫'],
 					emojiSize: 100,
 					confettiNumber: 70,
 				})
 			} else {
 				jsConfetti.addConfetti({
-					emojis: ['💫'],
+					emojis: ['🦄'],
 					emojiSize: 100,
 					confettiNumber: 70,
 				})
