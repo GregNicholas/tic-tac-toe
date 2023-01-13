@@ -53,7 +53,11 @@ function boxFunc() {
 		|| (b3 && b3 === b6 && b6 === b9) || (b1 && b1 === b5 && b5 === b9) || (b3 && b3 === b5 && b5 === b7)
 		|| (b2 && b2 === b5 && b5 === b8) || (b4 && b4 === b5 && b5 === b6)) {
 			declareWinner(curPlayer);
-			jsConfetti.addConfetti();
+			jsConfetti.addConfetti({
+				emojis: ['🦄'],
+				emojiSize: 100,
+				confettiNumber: 30,
+			  })
 		}
 		// Checking for Tie
 		else if (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9) {
