@@ -57,13 +57,13 @@ function boxFunc() {
 				jsConfetti.addConfetti({
 					emojis: ['🦄'],
 					emojiSize: 100,
-					confettiNumber: 30,
+					confettiNumber: 70,
 				})
 			} else {
 				jsConfetti.addConfetti({
 					emojis: ['💫'],
 					emojiSize: 100,
-					confettiNumber: 30,
+					confettiNumber: 70,
 				})
 			}
 		}
