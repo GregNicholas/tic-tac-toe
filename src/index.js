@@ -1,3 +1,7 @@
+// confetti time
+const canvas = document.getElementById('your_custom_canvas_id')
+const jsConfetti = new JSConfetti({ canvas })
+
 const square_b1 = document.getElementById("b1");
 const square_b2 = document.getElementById("b2");
 const square_b3 = document.getElementById("b3");
@@ -7,6 +11,15 @@ const square_b6 = document.getElementById("b6");
 const square_b7 = document.getElementById("b7");
 const square_b8 = document.getElementById("b8");
 const square_b9 = document.getElementById("b9");
+
+// check turn of the player and display value X or O accordingly
+let turn = "X";
+const b = "b1"
+function tic(square) {
+	document.getElementById(square).value = turn;
+	document.getElementById(square).disabled = true;
+	turn = turn === "X" ? "O" : "X";
+}
 
 const declareWinner = (curPlayer) => {
 	document.getElementById('print')
@@ -40,6 +53,7 @@ function boxFunc() {
 		|| (b3 && b3 === b6 && b6 === b9) || (b1 && b1 === b5 && b5 === b9) || (b3 && b3 === b5 && b5 === b7)
 		|| (b2 && b2 === b5 && b5 === b8) || (b4 && b4 === b5 && b5 === b6)) {
 			declareWinner(curPlayer);
+			jsConfetti.addConfetti();
 		}
 		// Checking for Tie
 		else if (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9) {
@@ -54,15 +68,6 @@ function boxFunc() {
 					.innerHTML = "Player O Turn";
 			}
 		}
-}
-
-// check turn of the player and display value X or O accordingly
-let turn = "X";
-const b = "b1"
-function tic(square) {
-	document.getElementById(square).value = turn;
-	document.getElementById(square).disabled = true;
-	turn = turn === "X" ? "O" : "X";
 }
 
 // Function to reset game
