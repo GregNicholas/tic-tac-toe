@@ -10,9 +10,8 @@
         <h1>TIC TAC TOE</h1>
         <p class="inst">
             <span class="inst-line inst-line-1">Game starts by clicking a box</span>
-            <span class="inst-line">First Player is <span class="player-title">Player X</span></span>
-            <span class="inst-line">Second Player is <span class="player-title">Player O</span></span>
-            <span class="inst-line">During multiple games, previous winner will go second</span>
+            <span class="inst-line">First Player is <span id="first-player" class="player-title">Player X</span></span>
+            <span class="inst-line">Second Player is <span id="second-player" class="player-title">Player O</span></span>
         </p>
  
         <div class="game-grid">
@@ -34,10 +33,12 @@
         </div>
 
         <button id="but" onclick="reset()">
-            RESET
+            New Game
         </button>
         <!-- Space to show player turn -->
-        <p id="print"></p>
+        <p id="show-status"></p>
+        <h3 class="stats" >Win Count</h3>
+        <p id="stats-display"></p>
     </div>
     <script src="./src/index.js"></script>
 </body>

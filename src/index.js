@@ -12,8 +12,23 @@ const square_b7 = document.getElementById("b7");
 const square_b8 = document.getElementById("b8");
 const square_b9 = document.getElementById("b9");
 
+const showStatus = document.getElementById("show-status");
+const firstPlayer = document.getElementById("first-player");
+const secondPlayer = document.getElementById("second-player");
+const statsDisplay = document.getElementById("stats-display");
+
+const gamesWon = JSON.parse(localStorage.getItem("gamesWon")) || {X: 0, O: 0, tie: 0};
+statsDisplay.innerText = `X: ${gamesWon.X} O: ${gamesWon.O} tie: ${gamesWon.tie}`
+
+
 // check turn of the player and display value X or O accordingly
 let turn = "X";
+const setPlayerOrder = () => {
+	firstPlayer.textContent = turn;
+	secondPlayer.textContent = turn === 'X' ? 'O' : 'X';
+}
+setPlayerOrder();
+
 const b = "b1"
 function tic(square) {
 	document.getElementById(square).value = turn;
@@ -22,8 +37,8 @@ function tic(square) {
 }
 
 const declareWinner = (curPlayer) => {
-	document.getElementById('print')
-		.innerHTML = `Player ${curPlayer} won`;
+	showStatus
+		.innerText = `Player ${curPlayer} won`;
 	square_b1.disabled = true;
 	square_b2.disabled = true;
 	square_b3.disabled = true;
@@ -33,6 +48,22 @@ const declareWinner = (curPlayer) => {
 	square_b7.disabled = true;
 	square_b8.disabled = true;
 	square_b9.disabled = true;
+	if(curPlayer === 'O') {
+		jsConfetti.addConfetti({
+			emojis: ['💫'],
+			emojiSize: 100,
+			confettiNumber: 70,
+		})
+	} else {
+		jsConfetti.addConfetti({
+			emojis: ['🦄'],
+			emojiSize: 100,
+			confettiNumber: 70,
+		})
+	}
+	gamesWon[curPlayer]++;
+	localStorage.setItem("gamesWon", JSON.stringify(gamesWon));
+	statsDisplay.innerText = `X: ${gamesWon.X} O: ${gamesWon.O} tie: ${gamesWon.tie}`
 }
 
 // Function called whenever user clicks on any box
@@ -53,37 +84,25 @@ function boxFunc() {
 		|| (b3 && b3 === b6 && b6 === b9) || (b1 && b1 === b5 && b5 === b9) || (b3 && b3 === b5 && b5 === b7)
 		|| (b2 && b2 === b5 && b5 === b8) || (b4 && b4 === b5 && b5 === b6)) {
 			declareWinner(curPlayer);
-			if(curPlayer === 'O') {
-				jsConfetti.addConfetti({
-					emojis: ['💫'],
-					emojiSize: 100,
-					confettiNumber: 70,
-				})
-			} else {
-				jsConfetti.addConfetti({
-					emojis: ['🦄'],
-					emojiSize: 100,
-					confettiNumber: 70,
-				})
-			}
 		}
 		// Checking for Tie
 		else if (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9) {
-				document.getElementById('print')
-					.innerHTML = "Match Tie";
+				showStatus.innerText = "Match Tie";
+				gamesWon.tie++;
+				localStorage.setItem("gamesWon", JSON.stringify(gamesWon));
+				statsDisplay.innerText = `X: ${gamesWon.X} | O: ${gamesWon.O} | tie: ${gamesWon.tie}`
 		} else {
 			if (turn === "X") {
-				document.getElementById('print')
-					.innerHTML = "Player X Turn";
+				showStatus.innerText = "Player X's Turn";
 			} else {
-				document.getElementById('print')
-					.innerHTML = "Player O Turn";
+				showStatus.innerText = "Player O's Turn";
 			}
 		}
 }
 
 // Function to reset game
 function reset() {
+	console.log(gamesWon)
 	// location.reload(); could just reload the page
 	// or do the following:
 	square_b1.value = '';
@@ -104,4 +123,7 @@ function reset() {
 	square_b7.disabled = false;
 	square_b8.disabled = false;
 	square_b9.disabled = false;
+
+	setPlayerOrder();
+	showStatus.innerText = `Player ${turn}'s turn`;
 }

@@ -1,77 +1,84 @@
+h1 {
+	color: orangered;
+	font-size: 45px;
+}
 
-	h1 {
-		color: orangered;
-		font-size: 45px;
-	}
+.inst {
+	font-family: Verdana,
+		Geneva, Tahoma, sans-serif;
+	color: dodgerblue;
+	font-size: 17px;
+}
 
-	.inst {
-		font-family: Verdana,
-			Geneva, Tahoma, sans-serif;
-		color: dodgerblue;
-		font-size: 17px;
-	}
+.inst-line {
+	display: block;
+}
 
-	.inst-line {
-		display: block;
-	}
+.inst-line-1 {
+	margin-bottom: 1rem;
+}
 
-	.inst-line-1 {
-		margin-bottom: 1rem;
-	}
+.player-title {
+	font-weight: bold;
+}
 
-	.player-title {
-		font-weight: bold;
-	}
+/* 3*3 Grid */
+.box {
+	width: 80px;
+	height: 60px;
+	margin: 0 .5rem .5rem 0;
+	border: 1px solid gray;
+	border-radius: 6px;
+	font-size: 30px;
+	text-align: center;
+	cursor: pointer;
+}
 
-	/* 3*3 Grid */
-	.box {
-		width: 80px;
-		height: 60px;
-        margin: 0 .5rem .5rem 0;
-		border: 1px solid gray;
-		border-radius: 6px;
-		font-size: 30px;
-		text-align: center;
-		cursor: pointer;
-	}
+.box:hover {
+	transform: scale(1.1);
+	border: 1px solid dodgerblue;
+}
 
-	.box:hover {
-		transform: scale(1.1);
-		border: 1px solid dodgerblue;
-	}
+.game-grid {
+	margin-bottom: 1rem;
+}
 
-	.game-grid {
-		margin-bottom: 1rem;
-	}
+/* Reset Button */
+#but {
+	box-sizing: border-box;
+	border: 1px solid dodgerblue;
+	margin: auto;
+	padding: 10px 24px;
+	border-radius: 4px;
+	font-family: Verdana,
+		Geneva, Tahoma, sans-serif;
 
-	/* Reset Button */
-	#but {
-		box-sizing: border-box;
-		width: 95px;
-		height: 40px;
-		border: 1px solid dodgerblue;
-		margin: auto;
-		border-radius: 4px;
-		font-family: Verdana,
-			Geneva, Tahoma, sans-serif;
+	background-color: dodgerblue;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
 
-		background-color: dodgerblue;
-		color: white;
-		font-size: 20px;
-		cursor: pointer;
-	}
+/* Player turn space */
+#show-status {
+	font-family: Verdana,
+		Geneva, Tahoma, sans-serif;
 
-	/* Player turn space */
-	#print {
-		font-family: Verdana,
-			Geneva, Tahoma, sans-serif;
+	color: dodgerblue;
+	font-size: 20px;
+}
 
-		color: dodgerblue;
-		font-size: 20px;
-	}
+/* Main Container */
+#main {
+	text-align: center;
+}
 
-	/* Main Container */
-	#main {
-		text-align: center;
-	}
+.stats {
+	font-size: 1.5rem;
+	margin-bottom: 0;
+    text-decoration: underline;
+}
 
+#stats-display {
+	margin-top: 5px;
+}
